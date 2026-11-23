@@ -1,0 +1,137 @@
+@import "tailwindcss" source(none);
+@source "../src";
+
+/* Design tokens. All colours use oklch. */
+@theme inline {
+  --font-display: "Avenir Next", "Segoe UI", sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.985 0.004 250);
+  --foreground: oklch(0.205 0.045 250);
+  --primary: oklch(0.205 0.045 250);
+  --primary-foreground: oklch(0.985 0.004 250);
+  --secondary: oklch(0.95 0.012 250);
+  --muted-foreground: oklch(0.49 0.026 250);
+  --accent: oklch(0.86 0.095 170);
+  --accent-foreground: oklch(0.205 0.045 250);
+  --border: oklch(0.89 0.012 250);
+  --input: oklch(0.89 0.012 250);
+  --ring: oklch(0.64 0.07 190);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.logo-crop {
+  display: block;
+  width: 108px;
+  height: 28px;
+  overflow: hidden;
+  
+}
+
+.logo-crop img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.logo-crop-footer {
+  width: 94px;
+  height: 25px;
+}
+
+.hero-indicator {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.section-space {
+  padding-block: 4.5rem;
+}
+
+.section-label {
+  color: var(--color-muted-foreground);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.section-label-inverse {
+  color: color-mix(in oklab, var(--color-primary-foreground) 64%, transparent);
+}
+
+.founder-photo {
+  min-height: 12rem;
+  object-position: center 30%;
+}
+
+.contact-qr,
+.contact-icon {
+  width: 5.25rem;
+  height: 5.25rem;
+}
+
+.contact-qr img {
+  height: 100%;
+}
+
+@media (min-width: 640px) {
+  .section-space {
+    padding-block: 5.5rem;
+  }
+
+  .founder-photo {
+    min-height: 15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
