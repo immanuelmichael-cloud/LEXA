@@ -16,7 +16,7 @@ import {
 
 import emmanuelPhoto from "./assets/emmanuelPhoto.jpg";
 import graciousPhoto from "./assets/graciousPhoto.jpg";
-import lexaLogo from "./assets/LEXA LOGO.png";
+import lexaLogo from "./assets/lexa-logo.png";
 import teamsQr from "./assets/teams-contact-qr.jpg";
 import whatsappQr from "./assets/whatsapp-contact-qr.jpg";
 import { Button, ButtonLink } from "./components/Button";
