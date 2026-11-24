@@ -24,25 +24,29 @@ import { Button, ButtonLink } from "./components/Button";
 const solutions = [
   {
     number: "01",
-    title: "Email & Inbox Automation",
+    title: "Email & Inbox Management",
+    subtitle: "Managed for you",
     description: "Smarter communication and inbox management.",
     icon: Inbox,
   },
   {
     number: "02",
-    title: "Ideas & Presentation Automation",
+    title: "Ideas & Slides Presentations",
+    subtitle: "Prepared for you",
     description: "Turning ideas into organized plans and professional presentations.",
     icon: Presentation,
   },
   {
     number: "03",
-    title: "Social Media & Client Acquisition Automation",
+    title: "Social Media Management & Client Acquisition",
+    subtitle: "Executed for you",
     description: "Streamlining marketing, lead generation, and customer acquisition.",
     icon: Share2,
   },
   {
     number: "04",
-    title: "Customer Retention Automation",
+    title: "Customer Retention",
+    subtitle: "Handled for you",
     description: "Simplifying follow-ups, customer engagement, and retention.",
     icon: HeartHandshake,
   },
@@ -188,6 +192,7 @@ export default function App() {
                         />
                       </div>
                       <h4 className="text-lg font-semibold leading-snug">{solution.title}</h4>
+                      <p className="mt-2 text-base font-medium text-foreground">{solution.subtitle}</p>
                       <p className="mt-3 text-sm leading-6 text-muted-foreground">
                         {solution.description}
                       </p>
