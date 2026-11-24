@@ -223,11 +223,11 @@ export default function App() {
                 imageAlt="Gracious Opara, co-founder of LEXA"
               />
               <FounderCard
-                name="Emmanuel Ndon"
+                name="Immanuel Ndon"
                 role="Co-Founder"
                 focus="Technology & Development"
                 image={emmanuelPhoto}
-                imageAlt="Emmanuel Ndon, co-founder of LEXA"
+                imageAlt="Immanuel Ndon, co-founder of LEXA"
               />
             </div>
 
@@ -276,12 +276,14 @@ export default function App() {
                 href="https://wa.me/message/HPVPMZBC2SY3J1"
                 action="Chat on WhatsApp"
               />
-              <ContactCard
-                title="Email"
-                description="Email address coming soon."
-                icon={<Mail size={30} strokeWidth={1.6} aria-hidden="true" />}
-                action="Send Us an Email"
-              />
+     <ContactCard
+  title="Email"
+  description="lexa.team.contact@gmail.com"
+  icon={<Mail size={30} strokeWidth={1.6} aria-hidden="true" />}
+  href="mailto:lexa.team.contact@gmail.com?subject=Website%20Enquiry"
+  action="Send Us an Email"
+/>
+
             </div>
           </div>
         </section>
@@ -349,13 +351,14 @@ function ContactCard({
   href?: string;
   action: string;
 }) {
+   const isExternal = href?.startsWith("http");
   return (
     <article className="contact-card grid grid-cols-[5.25rem_minmax(0,1fr)] items-center gap-4 rounded-md border border-border bg-background p-4 text-foreground sm:gap-5 sm:p-5">
       {image ? (
         <a
           href={href}
-          target="_blank"
-          rel="noopener noreferrer"
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
           aria-label={imageAlt}
           className="contact-qr rounded-sm bg-background p-1"
         >
@@ -375,12 +378,12 @@ function ContactCard({
         {href ? (
           <ButtonLink
             href={href}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
             size="sm"
             className="mt-2 w-full px-2 text-xs sm:px-3"
           >
-            {action} <ArrowUpRight aria-hidden="true" />
+            {action} {isExternal && <ArrowUpRight aria-hidden="true"  />}
           </ButtonLink>
         ) : (
           <Button type="button" size="sm" className="mt-2 w-full px-2 text-xs sm:px-3" disabled>
